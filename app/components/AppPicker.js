@@ -20,9 +20,12 @@ import PickerItem from './PickerItem';
 export default function AppPicker({
   icon,
   items,
+  numberOfColumns = 1,
   placeholder,
+  PickerItemComponent = PickerItem,
   onSelectItem,
   selectedItem,
+  width = '100%',
 }) {
   const [moduleVisible, setModuleVisible] = useState(false);
 
@@ -33,7 +36,7 @@ export default function AppPicker({
           setModuleVisible(true);
         }}
       >
-        <View style={styles.container}>
+        <View style={[styles.container, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               name={icon}
@@ -68,9 +71,11 @@ export default function AppPicker({
             keyExtractor={(item) => {
               return item.value.toString();
             }}
+            numColumns={numberOfColumns}
             renderItem={({ item }) => {
               return (
-                <PickerItem
+                <PickerItemComponent
+                  item={item}
                   label={item.label}
                   onPress={() => {
                     setModuleVisible(false);
@@ -90,7 +95,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
-    width: '100%',
     flexDirection: 'row',
     marginVertical: 10,
     padding: 10,
