@@ -28,11 +28,18 @@ import AppTextInput from './app/components/AppTextInput';
 import AppPicker from './app/components/AppPicker';
 import { useState } from 'react';
 import LoginScreen from './app/screens/LoginScreen';
+import RegisterScreen from './app/screens/RegisterScreen';
+import ListingEditScreen from './app/screens/ListingEditScreen';
 
 export default function App() {
   return (
     <Screen>
-      <LoginScreen />
+      <ListItem
+        image={require('./app/assets/mosh.jpg')}
+        title="djsidbndbndjsnbkjdnkbndskbnkdsnbkdsnfbdbnjdnbjkdnkbndjbndnbkdsnbkjdnfbjkdnbkndjnbkdnfbkndbkjdnbkdnfjbndkbnjsdknbkdnbkdnfjdnkbndkjnbjkdnfbkjdnbjkdnbkndkjbndjkbnkjdnkbndkbndk"
+        subTitle="onsiojbgeingjnnflnffenwgouiqwnrgu3nfowt4igjofi2uoi3ugrnjfreogrbifnjru39iehvjndfoiwbhudfjndfwhkjdbfnvjdfoifwhkjbdfndjfiowkdbhjfndjfdkhbfjnfjdfsdkjbndfsikhjdbnkfskdjvhbknjdfsdhkbcnfsjkhbknfsdhbjnckdvhkc"
+        showChevrons
+      />
     </Screen>
   );
 }
